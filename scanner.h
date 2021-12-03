@@ -15,6 +15,9 @@ public:
     Scanner(QWidget *parent = nullptr);
     ~Scanner();
 
+private slots:
+    void on_startButton_clicked();
+
 private:
     Ui::Scanner *ui;
 };

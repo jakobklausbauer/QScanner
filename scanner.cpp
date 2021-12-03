@@ -13,3 +13,8 @@ Scanner::~Scanner()
     delete ui;
 }
 
+
+void Scanner::on_startButton_clicked()
+{
+
+}
