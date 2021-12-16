@@ -19,7 +19,7 @@ Scanner::~Scanner()
 
 void Scanner::on_startButton_clicked()
 {
-    QVector<short> ports;
+    QVector<unsigned short> ports;
     QVector<bool> results;
     QString hostName = ui->hostnameEntry->text();
 
@@ -30,5 +30,26 @@ void Scanner::on_startButton_clicked()
 
     results = ScannerNet::doScan(hostName, ports);
 
-    qDebug() << results;
+    displayRes(ports, results);
+}
+
+void Scanner::displayRes(QVector<unsigned short>& ports, QVector<bool>& results)
+{
+    ui->resultWindow->clear();
+    for(int pIdx = 0; pIdx < ports.size(); pIdx++)
+    {
+        QString con = QString("Port: ") + QString::number(ports[pIdx]) + ": ";
+        if(results[pIdx])
+        {
+            ui->resultWindow->setTextColor(QColor::fromRgb(0, 255, 0));
+            con += "connection successful!";
+        }
+        else
+        {
+            ui->resultWindow->setTextColor(QColor::fromRgb(255, 0, 0));
+            con += "connection failed!";
+        }
+
+        ui->resultWindow->append(con);
+    }
 }

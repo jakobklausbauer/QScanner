@@ -15,6 +15,7 @@ class Scanner : public QWidget
 public:
     Scanner(QWidget *parent = nullptr);
     ~Scanner();
+    void displayRes(QVector<unsigned short>& ports, QVector<bool>& results);
 
 private slots:
     void on_startButton_clicked();

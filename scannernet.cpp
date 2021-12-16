@@ -8,7 +8,7 @@ ScannerNet::ScannerNet(QObject *parent) : QObject(parent)
 
 }
 
-QVector<bool> ScannerNet::doScan(const QString& hostname, const QVector<short>& ports)
+QVector<bool> ScannerNet::doScan(const QString& hostname, const QVector<unsigned short>& ports)
 {
     QVector<bool> res;
     QTcpSocket* socket = new QTcpSocket();
