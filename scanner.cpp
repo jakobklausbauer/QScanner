@@ -21,10 +21,10 @@ void Scanner::on_startButton_clicked()
 {
     QVector<unsigned short> ports;
     QVector<bool> results;
+
     QString hostName = ui->hostnameEntry->text();
 
     QStringList portStrings = ui->portEntry->text().split(',');
-
     for(QString p : portStrings)
         ports.push_back(p.toInt());
 

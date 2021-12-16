@@ -41,6 +41,9 @@
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
    </property>
+   <property name="placeholderText">
+    <string>0</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
