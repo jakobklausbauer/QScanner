@@ -2,6 +2,7 @@
 #define SCANNER_H
 
 #include <QWidget>
+#include "scannernet.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Scanner; }
@@ -20,5 +21,6 @@ private slots:
 
 private:
     Ui::Scanner *ui;
+    ScannerNet* m_scan;
 };
 #endif // SCANNER_H
