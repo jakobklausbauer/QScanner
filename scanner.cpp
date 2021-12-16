@@ -20,12 +20,15 @@ Scanner::~Scanner()
 void Scanner::on_startButton_clicked()
 {
     QVector<short> ports;
+    QVector<bool> results;
+    QString hostName = ui->hostnameEntry->text();
 
     QStringList portStrings = ui->portEntry->text().split(',');
 
     for(QString p : portStrings)
         ports.push_back(p.toInt());
 
-    qDebug() << "Ports: " << ports;
-    qDebug() << "Hostname: " << ui->hostnameEntry->text();
+    results = ScannerNet::doScan(hostName, ports);
+
+    qDebug() << results;
 }
